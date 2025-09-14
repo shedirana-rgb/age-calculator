@@ -1,93 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Age Calculator</title>
   <style>
+    /* ---- Global Styles ---- */
     body {
       font-family: Arial, sans-serif;
-      background: #f5f7fa;
+      background: linear-gradient(135deg, #6dd5ed, #2193b0);
+      margin: 0;
+      padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
+      min-height: 100vh;
     }
+
     .container {
       background: #fff;
       padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
       max-width: 400px;
       width: 100%;
+      text-align: center;
     }
+
     h1 {
       margin-bottom: 20px;
       color: #333;
     }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+
     input {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
       width: 100%;
-      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
       font-size: 16px;
     }
+
     button {
-      background: #4CAF50;
-      color: white;
+      margin-top: 20px;
       padding: 12px 20px;
+      background: #2193b0;
+      color: white;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       font-size: 16px;
+      transition: background 0.3s;
     }
+
     button:hover {
-      background: #45a049;
+      background: #17657d;
     }
+
     .result {
       margin-top: 20px;
+      padding: 15px;
+      background: #f3faff;
+      border-radius: 10px;
       font-size: 18px;
+      font-weight: bold;
       color: #333;
     }
-    .ad-box {
-      margin: 20px 0;
+
+    /* Responsive */
+    @media (max-width: 500px) {
+      .container {
+        margin: 15px;
+      }
+    }
+
+    /* ---- Ad Placeholder ---- */
+    .ads {
+      margin-top: 20px;
+      padding: 10px;
+      background: #f9f9f9;
+      border: 1px dashed #ccc;
+      border-radius: 10px;
+      font-size: 14px;
+      color: #666;
     }
   </style>
-  <!-- Google AdSense Script -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxxxxxxxxx"
-     crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="container">
     <h1>Age Calculator</h1>
-
-    <!-- Ad Placement Top -->
-    <div class="ad-box">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
-           data-ad-slot="1111111111"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-
-    <input type="date" id="dob">
+    <label for="dob">Enter Your Date of Birth:</label>
+    <input type="date" id="dob" />
     <button onclick="calculateAge()">Calculate Age</button>
-    <div class="result" id="result"></div>
 
-    <!-- Ad Placement Bottom -->
-    <div class="ad-box">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
-           data-ad-slot="2222222222"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <div class="result" id="result">Your age will appear here.</div>
+
+    <!-- AdSense / Affiliate Placeholder -->
+    <div class="ads">
+      🔹 Place for Google AdSense / Affiliate Ads Code
     </div>
   </div>
 
@@ -95,10 +110,10 @@
     function calculateAge() {
       const dob = document.getElementById("dob").value;
       if (!dob) {
-        document.getElementById("result").innerText = "Please select your date of birth.";
+        document.getElementById("result").innerText = "⚠️ Please select your date of birth!";
         return;
       }
-      
+
       const dobDate = new Date(dob);
       const today = new Date();
 
@@ -110,14 +125,15 @@
         months--;
         days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
       }
+
       if (months < 0) {
         years--;
         months += 12;
       }
 
       document.getElementById("result").innerText = 
-        `Your Age is ${years} Years, ${months} Months, and ${days} Days.`;
+        `🎉 You are ${years} years, ${months} months, and ${days} days old.`;
     }
   </script>
 </body>
-    </html>
+</html>
