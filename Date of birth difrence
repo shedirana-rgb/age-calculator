@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Difference Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">My Tools</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Age Calculator</a></li>
+        <li><a href="bmi.html">BMI Calculator</a></li>
+        <li><a href="datediff.html">Date Difference</a></li>
+      </ul>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <div class="container">
+      <h1>Date Difference Calculator</h1>
+      <label>Start Date:</label>
+      <input type="date" id="startDate">
+      <label>End Date:</label>
+      <input type="date" id="endDate">
+      <button onclick="calculateDateDiff()">Calculate Difference</button>
+      <div class="result" id="diffResult">Result will appear here.</div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 My Tools</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
